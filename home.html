@@ -1,0 +1,21 @@
+<div class="add">
+	<form action="/new/" method="post">
+		<input type="text" name="new_task" id="new_task">
+		<button type="submit">Add</button>
+	</form>
+</div>
+
+<div class="list">
+	<ul>
+		{{range .}}
+		{{if .}}
+		<li>
+			<form action="/delete/{{.}}" method="post">
+				<button type="submit">Delete</button>
+				{{.}}
+			</form>
+		</li>
+		{{end}}
+		{{end}}
+	</ul>
+</div>
